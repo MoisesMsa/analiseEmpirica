@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall    CMakeFiles/analyze.dir/src/main.cpp.o  -o analyze 
