@@ -1,21 +1,32 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include "search.h"
 
 int main(int argc, char const *argv[])
 {
-	int total_testes = argv[1];
+	int testsTotal = argv[1];
+	std:vector<long int> data;
+	std:vector<long int> timeData;
 
-	/* alocar elementos de teste
-	*/
 
-	/*	ponteiros para funções 
-	*
-	*/
+	for (int i = 0; i < 15; ++i)
+	{
+		data.push_back(999);
+	}
 
-	/*
-	*
-	*/
+	for (int i = 0; i < testsTotal; ++i)
+	{
+		auto init = std::chrono::system_clock::now;
+		//busca()
+		#if -l
+		linear();
+		#endif
+		//aumentar intervalo no vector
+		auto end = std::chrono::system_clock::now;
 
-	std::vector<> search_functions;
+		saveTime(end - init);
+	}
+
 	return 0;
 }
