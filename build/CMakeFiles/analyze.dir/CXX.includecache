@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/moisesmsa/Downloads/analiseEmpirica/src/main.cpp
+/mnt/c/edb/analiseEmpirica/src/main.cpp
+iostream
+-
+chrono
+-
+search.h
+/mnt/c/edb/analiseEmpirica/src/search.h
+
+/mnt/c/edb/analiseEmpirica/src/search.cpp
+search.h
+/mnt/c/edb/analiseEmpirica/src/search.h
+
+/mnt/c/edb/analiseEmpirica/src/search.h
 iostream
 -
 vector
