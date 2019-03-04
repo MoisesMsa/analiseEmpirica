@@ -5,10 +5,13 @@ using itr = std::vector<long int>::iterator;
 
 
 itr binary(int, itr, itr);
-void fibonacci(int, itr, itr);
-void linear(int, itr, itr);
-void jump();
-void ternary();
+itr fibonacci(int, itr, itr);
+itr ternary(int key, itr l, itr r);
+itr jump(int key, itr l, itr r);
+itr linear(int key, itr l, itr r);
+
+int generateFib(itr , itr);
+
 
 
 void fibonacci_r();

@@ -8,6 +8,7 @@ int main(int argc, char const *argv[])
 	std::vector<long int> data;
 	std::vector<long int> timeData;
 
+	std::cout << "Vector Debug: ";
 
 	for (int i = 0; i < 15; ++i)
 	{
@@ -18,8 +19,27 @@ int main(int argc, char const *argv[])
 	std::cout << std::endl;
 
 
-	// linear(5, data.begin(), data.end());
+	#ifdef LIN
+	linear(5, data.begin(), data.end());
+	#endif
+	
+	#ifdef BIN
 	binary(5, data.begin(), data.end());
+	#endif
+
+	#ifdef FIB
+	fibonacci(31, data.begin(), data.end());
+	#endif
+
+	#ifdef TER
+	ternary(31, data.begin(), data.end());
+	#endif
+
+	#ifdef JUM
+	ternary(70, data.begin(), data.end());
+	#endif
+
+
 	// for (int i = 0; i < testsTotal; ++i)
 	// {
 	// 	auto init = std::chrono::system_clock::now;
