@@ -1,7 +1,8 @@
 #include "search.h"
 
 
-itr linear(int key, itr l, itr r){
+itr linear(int key, itr l, itr r)
+{
 	while(l != r){
 
 	#ifdef DEBUG
@@ -20,10 +21,11 @@ itr linear(int key, itr l, itr r){
 	return r;
 }
 
-itr binary(int key, itr l, itr r){
+itr binary(int key, itr l, itr r)
+{
 	
-	int distance = std::distance(l, r)/2;
-	auto middle = l + distance;
+	int distance;
+	itr middle;
 
 	
 	while(distance != 0)
@@ -33,11 +35,15 @@ itr binary(int key, itr l, itr r){
 		middle = l + distance;
 
 		#ifdef DEBUG
-			std::cout << "middle value: " <<*middle << std::endl;
+			std::cout << "binary search middle value: " <<*middle << std::endl;
 		#endif
 		
 		if(*middle == key)
 		{
+			#ifdef DEBUG
+			std::cout << "binary found value: " <<*middle << std::endl;
+			#endif
+			
 			return middle;			
 		}
 		else if(*middle > key)
@@ -51,10 +57,15 @@ itr binary(int key, itr l, itr r){
 
 	}	
 
+	#ifdef DEBUG
+			std::cout << "Not Found " << std::endl;
+	#endif
+	
 	return r;
 }
 
-int generateFib(itr l, itr r){
+int generateFib(itr l, itr r)
+{
 	int aux = 0, fib1 = 0, fib2 = 1, distance = std::distance(l, r);
 
 	while(fib1 + fib2 <= distance)
@@ -71,7 +82,8 @@ int generateFib(itr l, itr r){
 	return fib1;
 }
 
-itr fibonacci(int key, itr l, itr r){
+itr fibonacci(int key, itr l, itr r)
+{
 	
 	#ifdef DEBUG
 	std::cout << "FIBONACCI init key: " <<  key << std::endl;
@@ -83,6 +95,7 @@ itr fibonacci(int key, itr l, itr r){
 
 		distanceF1 = generateFib(l, r);
 		auto itrFib1 = l + distanceF1;
+		
 		
 		if(*itrFib1 == key)
 		{
@@ -100,10 +113,20 @@ itr fibonacci(int key, itr l, itr r){
 		{
 			l = ++itrFib1;
 		}
+
+	
+		#ifdef DEBUG
+		std::cout << "distance: " << distanceF1 << std::endl;
+		std::cout << "l: " << *l << " r: " << *r << std::endl;
+		
+		std::cout << "vetor: ";
+		for(auto i = l; i < r; ++i) std::cout << *i << " ";
+		std::cout << std::endl;
+		#endif
 	}
 
 	#ifdef DEBUG
-	std::cout << "not found" << std::endl;
+	std::cout << "not found " << *r << std::endl;
 	#endif
 
 	return r;
@@ -176,6 +199,14 @@ itr jump(int key, itr l, itr r)
 
 	while(l != r)
 	{
+
+		// std::cout << "L: " << *l << std::endl;
+		
+		#ifdef DEBUG
+		for(auto i = l; i < r; ++i) std::cout << *i << " ";
+		std::cout << std::endl;
+		#endif
+
 		if(*l == key)
 		{
 			#ifdef DEBUG
@@ -193,10 +224,6 @@ itr jump(int key, itr l, itr r)
 			l = l+3;
 		}
 
-		#ifdef DEBUG
-		for(auto i = l; i < r; ++i) std::cout << *i << " ";
-		std::cout << std::endl;
-		#endif
 
 	}
 
@@ -207,6 +234,12 @@ itr jump(int key, itr l, itr r)
 	return r;
 }
 
+
+
+itr binary_r(int key, itr l, itr r)
+{
+
+}
 // void saveTime(int interval, std::vector){
 // 	time.push_back(interval);
 // }

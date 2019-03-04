@@ -10,16 +10,12 @@ itr ternary(int key, itr l, itr r);
 itr jump(int key, itr l, itr r);
 itr linear(int key, itr l, itr r);
 
+
+
+itr binary_r();
+itr ternary_r();
+
 int generateFib(itr , itr);
-
-
-
-void fibonacci_r();
-void linear_r();
-void binary_r();
-void jump_r();
-void ternary_r();
-
 // void saveTime(double, std::vector<double>);
 
 // void writeData(std::vector<double> &);

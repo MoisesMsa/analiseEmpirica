@@ -25,10 +25,12 @@ int main(int argc, char const *argv[])
 	
 	#ifdef BIN
 	binary(5, data.begin(), data.end());
+	binary(21, data.begin(), data.end());
 	#endif
 
 	#ifdef FIB
-	fibonacci(31, data.begin(), data.end());
+	fibonacci(5, data.begin(), data.end());
+	// fibonacci(31, data.begin(), data.end()-1);
 	#endif
 
 	#ifdef TER
@@ -36,7 +38,7 @@ int main(int argc, char const *argv[])
 	#endif
 
 	#ifdef JUM
-	ternary(70, data.begin(), data.end());
+	jump(70, data.begin(), data.end());
 	#endif
 
 
