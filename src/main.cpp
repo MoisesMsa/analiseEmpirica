@@ -24,13 +24,14 @@ int main(int argc, char const *argv[])
 	#endif
 	
 	#ifdef BIN
+	binary(-20, data.begin(), data.end());
 	binary(5, data.begin(), data.end());
 	binary(21, data.begin(), data.end());
 	#endif
 
 	#ifdef FIB
 	fibonacci(5, data.begin(), data.end());
-	// fibonacci(31, data.begin(), data.end()-1);
+	fibonacci(31, data.begin(), data.end()-1);
 	#endif
 
 	#ifdef TER
@@ -39,6 +40,19 @@ int main(int argc, char const *argv[])
 
 	#ifdef JUM
 	jump(70, data.begin(), data.end());
+	#endif
+
+
+	#ifdef BIN_R
+	// std::cout << "------------------------------------------------------" << std::endl;
+	// binary_r(24, data.begin(), data.end());
+	// std::cout << "------------------------------------------------------" << std::endl;
+	// binary_r(30, data.begin(), data.end());
+	// std::cout << "------------------------------------------------------" << std::endl;
+	// binary_r(70, data.begin(), data.end());
+	// std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(20, data.begin(), data.end());
+	binary_r(-20, data.begin(), data.end());
 	#endif
 
 
