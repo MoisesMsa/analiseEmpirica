@@ -10,9 +10,7 @@ itr ternary(int key, itr l, itr r);
 itr jump(int key, itr l, itr r);
 itr linear(int key, itr l, itr r);
 
-
-
-itr binary_r();
+itr binary_r(int key, itr l, itr r);
 itr ternary_r();
 
 int generateFib(itr , itr);

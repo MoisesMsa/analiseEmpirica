@@ -90,11 +90,12 @@ itr fibonacci(int key, itr l, itr r)
 	#endif	
 
 	auto distanceF1 = generateFib(l, r);
+	itr itrFib1;
 	
 	while(distanceF1 != 0){
 
 		distanceF1 = generateFib(l, r);
-		auto itrFib1 = l + distanceF1;
+		itrFib1 = l + distanceF1;
 		
 		
 		if(*itrFib1 == key)
@@ -235,11 +236,54 @@ itr jump(int key, itr l, itr r)
 }
 
 
-
 itr binary_r(int key, itr l, itr r)
 {
 
+	int m_distance = std::distance(l, r)/2;
+	itr m_val = l + m_distance;
+	
+		// if(l == r){
+		// 	std::cout << "PONTAS IGUAIS" <<std::endl;
+		// }
+		if(l <= r){
+		
+			#ifdef DEBUG
+			std::cout << "l: " << *l << " r: " << *r << std::endl;
+			std::cout << "bin_recursive val: " << *m_val << std::endl;
+			std::cout << "distance val: " << m_distance << std::endl;
+
+			std::cout << "vetor: ";
+			for(auto i = l; i < r; ++i) std::cout << *i << " ";
+			std::cout << std::endl;
+			#endif
+
+			std::cout << m_distance << std::endl;
+			
+			if(key == *m_val)
+			{
+				#ifdef DEBUG 
+				std::cout << ">>>>>>>>>>>>>>>>> found: " << *m_val << std::endl;
+				#endif
+				
+				return m_val;
+			}
+			else if(key < *m_val)
+			{
+				return binary_r(key, l, --m_val);
+			}
+			else if(key > *m_val)
+			{
+				return binary_r(key, ++m_val, r);
+			}
+		}
+	#ifdef DEBUG 
+	std::cout << ">>>>>>>>>>>>>>>>> not found: " << key << std::endl;
+	#endif
+
+	return r;
 }
+
+
 // void saveTime(int interval, std::vector){
 // 	time.push_back(interval);
 // }
