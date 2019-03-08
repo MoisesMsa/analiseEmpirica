@@ -35,7 +35,10 @@ int main(int argc, char const *argv[])
 	#endif
 
 	#ifdef TER
+	ternary(-1, data.begin(), data.end());
+	ternary(-10, data.begin(), data.end());
 	ternary(31, data.begin(), data.end());
+	ternary(34, data.begin(), data.end());
 	#endif
 
 	#ifdef JUM
@@ -47,12 +50,13 @@ int main(int argc, char const *argv[])
 	// std::cout << "------------------------------------------------------" << std::endl;
 	// binary_r(24, data.begin(), data.end());
 	// std::cout << "------------------------------------------------------" << std::endl;
-	// binary_r(30, data.begin(), data.end());
+	// binary_r(34, data.begin(), data.end());
+	// binary_r(31, data.begin(), data.end());
 	// std::cout << "------------------------------------------------------" << std::endl;
 	// binary_r(70, data.begin(), data.end());
 	// std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(20, data.begin(), data.end());
-	binary_r(-20, data.begin(), data.end());
+	// binary_r(20, data.begin(), data.end());
+	// binary_r(-20, data.begin(), data.end());
 	#endif
 
 

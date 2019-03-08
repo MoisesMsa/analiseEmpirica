@@ -150,7 +150,7 @@ itr ternary(int key, itr l, itr r)
 		if(*t1 == key)
 		{
 			#ifdef DEBUG
-			std::cout << "found: " << *t1 << std::endl;
+			std::cout << ">>>>>>>>>>>>> found: " << *t1 << std::endl;
 			#endif
 			
 			return t1;
@@ -158,7 +158,7 @@ itr ternary(int key, itr l, itr r)
 		else if(*t2 == key)
 		{
 			#ifdef DEBUG
-			std::cout << "found: " << *t2 << std::endl;
+			std::cout << ">>>>>>>>>>>>> found: " << *t2 << std::endl;
 			#endif
 
 			return t2;
@@ -167,16 +167,14 @@ itr ternary(int key, itr l, itr r)
 		{
 			l = ++t1; 
 		}
-		else if(*t1 > key)
-		{
-			r = --t1;
-		}
-		else if(*t2 < key)
-		{
-			l = ++t2; 
-		}else if(*t2 > key)
+		else if(*t2 > key)
 		{
 			r = --t2;
+		}
+		else
+		{
+			l = ++t2; 
+			r = --t1;
 		}
 
 		#ifdef DEBUG
@@ -186,7 +184,7 @@ itr ternary(int key, itr l, itr r)
 	}
 
 	#ifdef DEBUG
-	std::cout << "not found" << std::endl;
+	std::cout << ">>>>>>>>>>>>>>> not found: " << key << std::endl;
 	#endif
 
 	return r;
@@ -242,46 +240,48 @@ itr binary_r(int key, itr l, itr r)
 	int m_distance = std::distance(l, r)/2;
 	itr m_val = l + m_distance;
 	
-		// if(l == r){
-		// 	std::cout << "PONTAS IGUAIS" <<std::endl;
-		// }
-		if(l <= r){
+	if(l <= r)
+	{
+	
+		#ifdef DEBUG
+		std::cout << "l: " << &*l << " r: " << &*r << std::endl;
+		std::cout << "l: " << *l << " r: " << *r << std::endl;
+		std::cout << "bin_recursive val: " << *m_val << std::endl;
+		std::cout << "distance val: " << m_distance << std::endl;
+
+		std::cout << "vetor: ";
+		for(auto i = l; i < r; ++i) std::cout << *i << " ";
+		std::cout << std::endl;
+		#endif
 		
-			#ifdef DEBUG
-			std::cout << "l: " << *l << " r: " << *r << std::endl;
-			std::cout << "bin_recursive val: " << *m_val << std::endl;
-			std::cout << "distance val: " << m_distance << std::endl;
-
-			std::cout << "vetor: ";
-			for(auto i = l; i < r; ++i) std::cout << *i << " ";
-			std::cout << std::endl;
+		if(key == *m_val)
+		{
+			#ifdef DEBUG 
+			std::cout << ">>>>>>>>>>>>>>>>> found: " << *m_val << std::endl;
 			#endif
-
-			std::cout << m_distance << std::endl;
 			
-			if(key == *m_val)
-			{
-				#ifdef DEBUG 
-				std::cout << ">>>>>>>>>>>>>>>>> found: " << *m_val << std::endl;
-				#endif
-				
-				return m_val;
-			}
-			else if(key < *m_val)
-			{
-				return binary_r(key, l, --m_val);
-			}
-			else if(key > *m_val)
-			{
-				return binary_r(key, ++m_val, r);
-			}
+			return m_val;
 		}
+		else if(key < *m_val)
+		{
+			return binary_r(key, l, --m_val);
+		}
+		else if(key > *m_val)
+		{
+			return binary_r(key, ++m_val, r);
+		}
+	}
+	
 	#ifdef DEBUG 
 	std::cout << ">>>>>>>>>>>>>>>>> not found: " << key << std::endl;
 	#endif
 
 	return r;
 }
+
+
+
+
 
 
 // void saveTime(int interval, std::vector){
