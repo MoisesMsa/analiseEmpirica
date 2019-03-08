@@ -35,10 +35,24 @@ int main(int argc, char const *argv[])
 	#endif
 
 	#ifdef TER
-	ternary(-1, data.begin(), data.end());
-	ternary(-10, data.begin(), data.end());
+	ternary(20, data.begin(), data.end());
+	ternary(21, data.begin(), data.end());
+	ternary(22, data.begin(), data.end());
+	ternary(23, data.begin(), data.end());
+	ternary(24, data.begin(), data.end());
+	ternary(25, data.begin(), data.end());
+	ternary(26, data.begin(), data.end());
+	ternary(27, data.begin(), data.end());
+	ternary(28, data.begin(), data.end());
+	ternary(29, data.begin(), data.end());
+	ternary(30, data.begin(), data.end());
 	ternary(31, data.begin(), data.end());
+	ternary(32, data.begin(), data.end());
+	ternary(33, data.begin(), data.end());
 	ternary(34, data.begin(), data.end());
+	ternary(35, data.begin(), data.end());
+	ternary(36, data.begin(), data.end());
+	ternary(37, data.begin(), data.end());
 	#endif
 
 	#ifdef JUM
@@ -47,18 +61,45 @@ int main(int argc, char const *argv[])
 
 
 	#ifdef BIN_R
-	// std::cout << "------------------------------------------------------" << std::endl;
-	// binary_r(24, data.begin(), data.end());
-	// std::cout << "------------------------------------------------------" << std::endl;
-	// binary_r(34, data.begin(), data.end());
-	// binary_r(31, data.begin(), data.end());
-	// std::cout << "------------------------------------------------------" << std::endl;
-	// binary_r(70, data.begin(), data.end());
-	// std::cout << "------------------------------------------------------" << std::endl;
-	// binary_r(20, data.begin(), data.end());
-	// binary_r(-20, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(24, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(34, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(31, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(70, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(20, data.begin(), data.end());
+	std::cout << "------------------------------------------------------" << std::endl;
+	binary_r(-20, data.begin(), data.end());
 	#endif
 
+	#ifdef TER_R
+	ternary_r(-1, data.begin(), data.end());
+	// ternary_r(-20, data.begin(), data.end());
+	ternary_r(20, data.begin(), data.end());
+	ternary_r(21, data.begin(), data.end());
+	ternary_r(22, data.begin(), data.end());
+	ternary_r(23, data.begin(), data.end());
+	ternary_r(24, data.begin(), data.end());
+	ternary_r(25, data.begin(), data.end());
+	ternary_r(26, data.begin(), data.end());
+	ternary_r(27, data.begin(), data.end());
+	ternary_r(28, data.begin(), data.end());
+	ternary_r(29, data.begin(), data.end());
+	ternary_r(30, data.begin(), data.end());
+	ternary_r(31, data.begin(), data.end());
+	ternary_r(32, data.begin(), data.end());
+	ternary_r(33, data.begin(), data.end());
+	ternary_r(34, data.begin(), data.end());
+	ternary_r(35, data.begin(), data.end());
+	ternary_r(36, data.begin(), data.end());
+	ternary_r(37, data.begin(), data.end());
+	ternary_r(-1, data.begin(), data.end());
+	ternary_r(24, data.begin(), data.end());
+	ternary_r(30, data.begin(), data.end());
+	#endif
 
 	// for (int i = 0; i < testsTotal; ++i)
 	// {

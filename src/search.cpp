@@ -279,6 +279,61 @@ itr binary_r(int key, itr l, itr r)
 	return r;
 }
 
+itr ternary_r(int key, itr l, itr r){
+
+	// #ifdef DEBUG
+	// std::cout << "init ternary val: " << key << std::endl;
+	// #endif
+
+	auto partition = std::distance(l, r)/3;
+	
+	auto t1 = l + partition;
+	auto t2 = t1 + partition;
+
+	if(l <= r)
+	{
+		if(*t1 == key)
+		{
+			#ifdef DEBUG
+			std::cout << ">>>>>>>>>>>>> found: " << *t1 << std::endl;
+			#endif
+			
+			return t1;
+		}
+		else if(*t2 == key)
+		{
+			#ifdef DEBUG
+			std::cout << ">>>>>>>>>>>>> found: " << *t2 << std::endl;
+			#endif
+
+			return t2;
+		}
+		else if(*t1 < key)
+		{
+			return ternary_r(key, ++t1, r);
+		}
+		else if(*t2 > key)
+		{
+			return ternary_r(key, l, --t2);
+		}
+		else
+		{
+			return ternary_r(key, ++t2, --t1);
+		}
+
+		#ifdef DEBUG
+		for(auto i = t1; i < t2; ++i) std::cout << *i << " ";
+		std::cout << std::endl;
+		#endif
+	}
+
+	#ifdef DEBUG
+	std::cout << ">>>>>>>>>>>>>>> not found: " << key << std::endl;
+	#endif
+
+	return r;
+}
+
 
 
 

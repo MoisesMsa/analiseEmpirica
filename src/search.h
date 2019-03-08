@@ -11,7 +11,7 @@ itr jump(int key, itr l, itr r);
 itr linear(int key, itr l, itr r);
 
 itr binary_r(int key, itr l, itr r);
-itr ternary_r();
+itr ternary_r(int key, itr l, itr r);
 
 int generateFib(itr , itr);
 // void saveTime(double, std::vector<double>);
