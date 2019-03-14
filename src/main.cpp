@@ -1,22 +1,30 @@
 #include <iostream>
 #include <chrono>
+#include <string>
+#include<bits/stdc++.h> 
 #include "search.h"
+#include <function.h>
+
+using itr = std::vector<long int>::iterator;
+
+#define maxDataset 50;
+
+
 
 int main(int argc, char const *argv[])
 {
-	int testsTotal = std::stoi(argv[1]);
-	std::vector<long int> data;
-	std::vector<long int> timeData;
+	//Vector where the group of datasets are stored
+    std::vector<std::std::vector<long int>> datasets;
+    std::vector<std::function<itr(int, itr, itr)>> func_v = {linear, binary, fibonacci, ternary, jump, binary_r, te
+    };
+    int datasetQuantity = maxDataset;
 
-	std::cout << "Vector Debug: ";
+    if(argc > 1){  datasetQuantity = std::stoi(argv[1]);  };
 
-	for (int i = 0; i < 15; ++i)
-	{
-		data.push_back(i+20);
-		std::cout << data[i] << " ";
-	}
+    
+    generateDataset(datasetQuantity, datasets);
 
-	std::cout << std::endl;
+   	/*
 
 
 	#ifdef LIN
@@ -113,6 +121,8 @@ int main(int argc, char const *argv[])
 
 	// 	// saveTime(end - init);
 	// }
+
+	*/
 
 	return 0;
 }

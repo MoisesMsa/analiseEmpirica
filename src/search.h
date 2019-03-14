@@ -14,6 +14,11 @@ itr binary_r(int key, itr l, itr r);
 itr ternary_r(int key, itr l, itr r);
 
 int generateFib(itr , itr);
+
+//void run_all();
+
+
+void generateDataset(int numberDatasets, std::vector<std::vector<long int>> & datasets);
 // void saveTime(double, std::vector<double>);
 
 // void writeData(std::vector<double> &);

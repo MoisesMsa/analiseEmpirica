@@ -334,7 +334,26 @@ itr ternary_r(int key, itr l, itr r){
 	return r;
 }
 
+void generateDataset(int numberDatasets, std::vector<std::vector<long int>> & datasets)
+{
+	int i = 0, long int maxGen = 2**28;
+	int initialSize = 1000;
+	int nJump = (maxGen - 1000)/numberDatasets;
 
+	datasets.resize(numberDatasets);
+
+	for (int i = 0; i < numberDatasets; ++i)
+	{  
+		datasets[i].resize(initialSize);
+		
+		for (int j = 0; j < ; ++j)
+		{
+			datasets[i].push_back(j);
+
+		}
+		initialSize += nJump;
+	}
+}
 
 
 
