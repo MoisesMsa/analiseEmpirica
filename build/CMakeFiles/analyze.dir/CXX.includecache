@@ -6,21 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/edb/analiseEmpirica/src/main.cpp
+/home/brunabarbosa_/analiseEmpirica/src/main.cpp
 iostream
 -
 chrono
 -
+string
+-
+bits/stdc++.h
+-
 search.h
-/mnt/c/edb/analiseEmpirica/src/search.h
+/home/brunabarbosa_/analiseEmpirica/src/search.h
+functional
+-
 
-/mnt/c/edb/analiseEmpirica/src/search.cpp
+/home/brunabarbosa_/analiseEmpirica/src/search.cpp
 search.h
-/mnt/c/edb/analiseEmpirica/src/search.h
+/home/brunabarbosa_/analiseEmpirica/src/search.h
 
-/mnt/c/edb/analiseEmpirica/src/search.h
+/home/brunabarbosa_/analiseEmpirica/src/search.h
 iostream
 -
 vector
+-
+math.h
 -
 

@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -D DEBUG -D TER_R   CMakeFiles/analyze.dir/src/main.cpp.o CMakeFiles/analyze.dir/src/search.cpp.o  -o analyze 
+/usr/bin/c++   -Wall -D DEBUG   CMakeFiles/analyze.dir/src/main.cpp.o CMakeFiles/analyze.dir/src/search.cpp.o  -o analyze 
