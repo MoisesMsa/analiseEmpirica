@@ -27,6 +27,8 @@ chrono
 /mnt/c/edb/analiseEmpirica/src/main.cpp
 iostream
 -
+string
+-
 ../inc/searchs.h
 /mnt/c/edb/analiseEmpirica/inc/searchs.h
 ../inc/analysis_aux.h

@@ -2,7 +2,7 @@
 
 
 itr linear(int key, itr l, itr r)
-{
+{	
 	while(l != r){
 
 	#ifdef DEBUG
@@ -23,7 +23,7 @@ itr linear(int key, itr l, itr r)
 
 itr binary(int key, itr l, itr r)
 {
-	
+
 	int distance;
 	itr middle;
 

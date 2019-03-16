@@ -5,6 +5,7 @@ std::vector<double> time_avg;
 std::vector<int> input_size;
 std::vector<char> searchs_labels;
 
+
 void fill_data(int data_size){
 	std::cout << "alocatting data vector ..." << std::endl;
 	for (int i = 0; i < data_size; ++i){
@@ -13,47 +14,64 @@ void fill_data(int data_size){
 	std::cout << "allocation finished!" << std::endl;
 }
 
-void run_search(std::function <itr (int ,itr, itr)> search, int key, int sampling){
+void run_search(std::function <itr (int ,itr, itr)> search, int key, itr l, itr r){
 	
-	auto first = dataset.begin(), last = first + sampling;
 	std::chrono::duration<double> avg_exec;
+
+	for (int i = 0; i < 100; ++i)
+	{
+		auto init = std::chrono::high_resolution_clock::now();
+		search(key, l, r);
+		auto end = std::chrono::high_resolution_clock::now();
+
+ 	   	avg_exec += (end - init);
+	}
+
+    save_avg(avg_exec.count());
+}
+
+void control_flux(std::vector<std::function<itr(int,itr,itr)> > searchs_v, int key, int data_size, int sampling){
+	
+	fill_data(data_size);
+
+	auto first = dataset.begin(), last = first + sampling;
+	
 
 	while(last <= dataset.end())
 	{
-		std::cout << "running search" << std::endl;
 		save_input_size(std::distance(first, last));
-
-		for (int i = 0; i < 100; ++i)
+		
+		for (auto search = searchs_v.begin(); search < searchs_v.end(); ++search)
 		{
-			auto init = std::chrono::high_resolution_clock::now();
-			search(key, first, last);
-			auto end = std::chrono::high_resolution_clock::now();
-
-	 	   	avg_exec += (end - init);
+			run_search(*search, key, first, last);
 		}
-	    save_avg(avg_exec.count());
-	
-	    last += sampling;
+
+		last += sampling;
 	}
 }
+
 
 int calc_sampling(int sampling, int data_size){
 	sampling = data_size/sampling;
 	return sampling;
 }
 
-
 void save_avg(double t_interval){
-	if(time_avg.empty()){
-		std::cout << "empty avg time!" << std::endl;
+
+	//check if the time_avg is empty to avoid seg fault
+	if(time_avg.empty())
+	{
 		time_avg.push_back(t_interval/100);
-	}else{
-		
-		auto last_avg = time_avg.end();
-		t_interval = *last_avg + (t_interval - *last_avg)/100;
-		
-		time_avg.push_back(t_interval);
 	}
+	else
+	{
+	
+		auto last_avg = time_avg.end();
+		//progressive average to avoid imprecision rounding
+		t_interval = *last_avg + (t_interval - *last_avg)/100;
+		time_avg.push_back(t_interval);
+	
+	} 
 }
 
 void save_input_size(int d_interval){
@@ -64,7 +82,7 @@ void save_labels(char label){
 	searchs_labels.push_back(label);
 }
 
-// void write_data(std::vector<double> &time){
+// void write_data(){
 // 	ofstream grap("analyze graph");
 // 	//titulo da pesquisa
 // 	//numero de casos de teste
@@ -72,17 +90,14 @@ void save_labels(char label){
 
 // 	for (int i = 0; i < count; ++i)
 // 	 {
-
+// 	 	std::cout << 
 // 	 } 
-// }
-
-// double average(){
-
 // }
 
 void print_time(){
 	std::cout << "time vector size: " << time_avg.size() << std::endl;
 	std::cout << "data vector size: " << dataset.size() << std::endl;
-	for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
-		std::cout << *i << std::endl;
+	// for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
+	// 	std::cout << *i << std::endl;
 }
+
