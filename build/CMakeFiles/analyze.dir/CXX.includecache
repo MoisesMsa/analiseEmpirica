@@ -6,17 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/edb/analiseEmpirica/src/main.cpp
-iostream
--
-search.h
-/mnt/c/edb/analiseEmpirica/src/search.h
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
 
-/mnt/c/edb/analiseEmpirica/src/search.cpp
-search.h
-/mnt/c/edb/analiseEmpirica/src/search.h
-
-/mnt/c/edb/analiseEmpirica/src/search.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
 iostream
 -
 vector
@@ -25,4 +19,20 @@ functional
 -
 chrono
 -
+
+/mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp
+../inc/analysis_aux.h
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+
+/mnt/c/edb/analiseEmpirica/src/main.cpp
+iostream
+-
+../inc/searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
+../inc/analysis_aux.h
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+
+/mnt/c/edb/analiseEmpirica/src/searchs.cpp
+../inc/searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
 

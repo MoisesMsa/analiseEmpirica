@@ -100,18 +100,6 @@ int main(int argc, char const *argv[])
 	ternary_r(30, data.begin(), data.end());
 	#endif
 
-	// for (int i = 0; i < testsTotal; ++i)
-	// {
-	// 	auto init = std::chrono::system_clock::now;
-	// 	//busca()
-	// 	#if -l
-	// 	linear();
-	// 	#endif
-	// 	//aumentar intervalo no vector
-	// 	auto end = std::chrono::system_clock::now;
-
-	// 	// saveTime(end - init);
-	// }
 
 	return 0;
 }

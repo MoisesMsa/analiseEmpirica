@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /mnt/c/edb/analiseEmpirica/build
 CMakeFiles/analyze.dir/all:
 	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/depend
 	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=1,2,3 "Built target analyze"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=1,2,3,4 "Built target analyze"
 .PHONY : CMakeFiles/analyze.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/analyze.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/analyze.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/edb/analiseEmpirica/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/edb/analiseEmpirica/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/analyze.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/edb/analiseEmpirica/build/CMakeFiles 0
 .PHONY : CMakeFiles/analyze.dir/rule
