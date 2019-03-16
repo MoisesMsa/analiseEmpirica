@@ -1,4 +1,4 @@
-# Empirical Anal
+# Empirical Analysis of Searching Algorithms
 
 ## Compiling and Running 
 1. cd build
