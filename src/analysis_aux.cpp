@@ -1,7 +1,7 @@
 #include "../inc/analysis_aux.h"
 
-std::vector<double> time_data;
 std::vector<long int> dataset;
+std::vector<double> time_data;
 std::vector<int> dataset_interval;
 std::vector<char> data_label;
 
@@ -17,11 +17,13 @@ void fill_data(int data_size){
 void run_search(std::function <itr (int ,itr, itr)> search, int key, int sampling){
 	
 	auto first = dataset.begin();
-	auto last = dataset.end();
+	auto last = first + sampling;
 		
-	while(last != dataset.end())
+	while(last <= dataset.end())
 	{
-	
+		std::cout << "running search" << std::endl;
+		save_dataset_interval(std::distance(first, last));
+
 		auto init = std::chrono::high_resolution_clock::now();
 		search(key, first, last);
 		auto end = std::chrono::high_resolution_clock::now();
@@ -32,6 +34,7 @@ void run_search(std::function <itr (int ,itr, itr)> search, int key, int samplin
 	    std::cout << interval.count() << "ms" << std::endl;
 	
 	    last += sampling;
+	    std::cout << *last << std::endl;
 	}
 }
 
@@ -39,7 +42,6 @@ int calc_sampling(int sampling, int data_size){
 	sampling = data_size/sampling;
 	return sampling;
 }
-
 
 void print_time(){
 	std::cout << "time vector size: " << time_data.size() << std::endl;
@@ -50,10 +52,13 @@ void print_time(){
 	}
 }
 
-
-void save_time(double interval){
-	time_data.push_back(interval);
+void save_time(double t_interval){
+	time_data.push_back(t_interval);
 }
+
+void save_dataset_interval(int d_interval){
+	dataset_interval.push_back(d_interval);
+}	
 
 // void write_data(std::vector<double> &time){
 // 	ofstream grap("analyze graph");

@@ -19,8 +19,8 @@ int main(int argc, char const *argv[])
 	std::function<itr (int, itr, itr) > search = binary;
 	
 	run_search(search, -10, sampling);
+	print_time();
 
-	// print_time();
 
 	return 0;
 }

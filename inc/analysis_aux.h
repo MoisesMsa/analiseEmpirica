@@ -9,6 +9,7 @@ void fill_data(int);
 void print_time();
 
 void save_time(double);
+void save_dataset_interval(int);
 
 // void saveTime(double, std::vector<double>);
 
