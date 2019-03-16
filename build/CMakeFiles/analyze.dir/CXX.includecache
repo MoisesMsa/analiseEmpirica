@@ -9,8 +9,6 @@
 /mnt/c/edb/analiseEmpirica/src/main.cpp
 iostream
 -
-chrono
--
 search.h
 /mnt/c/edb/analiseEmpirica/src/search.h
 
@@ -22,5 +20,9 @@ search.h
 iostream
 -
 vector
+-
+functional
+-
+chrono
 -
 
