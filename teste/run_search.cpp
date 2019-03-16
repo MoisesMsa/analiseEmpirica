@@ -1,6 +1,5 @@
 #include <iostream>
-#include <chrono>
-#include "search.h"
+#include "../inc/searchs.h"
 
 int main(int argc, char const *argv[])
 {
