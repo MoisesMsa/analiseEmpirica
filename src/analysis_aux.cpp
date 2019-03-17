@@ -35,7 +35,8 @@ void control_flux(std::vector<std::function<itr(int,itr,itr)> > searchs_v, int k
 	fill_data(data_size);
 
 	auto first = dataset.begin(), last = first + sampling;
-	
+	std::cout << "sam: " << sampling << '\n';
+	std::cout << "distance init: " << std::distance(first, last) << '\n';
 
 	while(last <= dataset.end())
 	{
@@ -48,6 +49,8 @@ void control_flux(std::vector<std::function<itr(int,itr,itr)> > searchs_v, int k
 
 		last += sampling;
 	}
+
+	writeData();
 }
 
 
@@ -78,23 +81,11 @@ void save_input_size(int d_interval){
 	input_size.push_back(d_interval);
 }	
 
-// void write_data(){
-// 	ofstream grap("analyze graph");
-// 	//titulo da pesquisa
-// 	//numero de casos de teste
-// 	//coluna com os daods correspondentes ao total das pesquisas especificadas pelo usuário
-
-// 	for (int i = 0; i < count; ++i)
-// 	 {
-// 	 	std::cout << 
-// 	 } 
-// }
-
 void print_time(){
 	std::cout << "time vector size: " << time_avg.size() << std::endl;
 	std::cout << "data vector size: " << dataset.size() << std::endl;
-	// for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
-	// 	std::cout << *i << std::endl;
+	for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
+		std::cout << *i << std::endl;
 }
 
 void add_label(std::vector<std::string> labels){
@@ -105,3 +96,49 @@ void add_label(std::string label){
 	searchs_labels.push_back(label);
 }
 
+
+void writeData(){
+
+	std::cout << "time " << time_avg.size() << std::endl;
+	std::cout << "labels " << searchs_labels.size() << std::endl;
+	std::cout << "input " << input_size.size() << std::endl;
+
+	int file_size = time_avg.size() + searchs_labels.size() + input_size.size(), j = 0;
+	std::cout << "file size" << file_size << std::endl;
+
+	auto time = time_avg.begin();
+	auto label = searchs_labels.begin();
+	auto size = input_size.begin();
+
+	std::ofstream output;
+
+	output.open("../output/analyze_output.txt");
+
+	output << "# N ";
+
+	// print_time();
+
+	std::cout << "time AVG: " << time_avg.size() << std::endl;
+
+	for(int i = 0; i <= file_size; i++){
+		std::cout << "i: " << i << std::endl;
+		if(i < searchs_labels.size())
+		{
+			output << *label << "   ";
+			++label;
+		}else if(j == searchs_labels.size()){
+			output << " \n";
+			j = 0;
+		}else if(j == 1){
+			output << *size << "    ";
+			++size;
+		}else{
+			output << *time << "    ";
+			++time;
+		}
+
+		++j;
+	}
+
+	output.close();
+}

@@ -11,6 +11,8 @@ searchs.h
 /mnt/c/edb/analiseEmpirica/inc/searchs.h
 string
 -
+fstream
+-
 
 /mnt/c/edb/analiseEmpirica/inc/searchs.h
 iostream
