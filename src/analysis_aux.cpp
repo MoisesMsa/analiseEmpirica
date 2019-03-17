@@ -3,7 +3,7 @@
 std::vector<long int> dataset;
 std::vector<double> time_avg;
 std::vector<int> input_size;
-std::vector<char> searchs_labels;
+std::vector<std::string> searchs_labels;
 
 
 void fill_data(int data_size){
@@ -78,10 +78,6 @@ void save_input_size(int d_interval){
 	input_size.push_back(d_interval);
 }	
 
-void save_labels(char label){
-	searchs_labels.push_back(label);
-}
-
 // void write_data(){
 // 	ofstream grap("analyze graph");
 // 	//titulo da pesquisa
@@ -99,5 +95,13 @@ void print_time(){
 	std::cout << "data vector size: " << dataset.size() << std::endl;
 	// for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
 	// 	std::cout << *i << std::endl;
+}
+
+void add_label(std::vector<std::string> labels){
+	searchs_labels = labels;
+}
+
+void add_label(std::string label){
+	searchs_labels.push_back(label);
 }
 
