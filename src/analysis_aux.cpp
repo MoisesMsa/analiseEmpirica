@@ -17,15 +17,16 @@ void fill_data(int data_size){
 void run_search(std::function <itr (int ,itr, itr)> search, int key, itr l, itr r){
 	std::chrono::duration<double> avg_exec;
 
-	for (int i = 0; i < 100; ++i)
-	{
+	// for (int i = 0; i < 100; ++i)
+	// {
 		auto init = std::chrono::high_resolution_clock::now();
 		search(key, l, r);
 		auto end = std::chrono::high_resolution_clock::now();
 
  	   	avg_exec += (end - init);
-	}
-
+	// }
+	//!!!!->>>>>>>>>>>>>>>>>SAVE AVG TÁ PEGANFO ELEMENTO ANTERIOR DE OUTRA BUSCA ATENÇÃO!!!!
+    //>>>>>deixar media pra dps ou durante escrita do arquivo
     save_avg(avg_exec.count());
 }
 
@@ -38,25 +39,29 @@ void control_flux(std::vector<std::function<itr(int,itr,itr)> > searchs_v, int k
 	// std::cout << "sam: " << sampling << '\n';
 	// std::cout << "distance init: " << std::distance(first, last) << '\n';
 
-	while(last <= dataset.end())
-	{
-		std::cout << "sampling num: " << sam_num << std::endl;
+	// while(last <= dataset.end())
+	// {
 		save_input_size(std::distance(first, last));
 		
 		auto label = searchs_labels.begin();
 		
-		// std::cout << "----------------------------------------------" << std::endl; 
+		// std::cout << ">>>> running " << *label << "/sampling num: " << sam_num << std::endl;
+		
+		// std::cout << "----------------------------------------------" << std::endl;
+		//PASSAR O FOR 100 PRA CÁ E REMOVER PRIMEIRO WHILE DO DATA SET, SA BUSCA VA SER PASSADA NO PARAM E NÃO EM UM LAÇO 
 		for (auto search = searchs_v.begin(); search < searchs_v.end(); ++search)
 		{
-			// std::cout << "running: " << *label << std::endl;
+			//se times == 100
 			run_search(*search, key, first, last);
 			++label;
+
+			//times ++
 		}
 		// std::cout << "----------------------------------------------" << std::endl; 
 
 		last += sampling;
 		++sam_num;
-	}
+	// }
 
 	writeData();
 }
@@ -70,19 +75,20 @@ int calc_sampling(int sampling, int data_size){
 void save_avg(double t_interval){
 
 	//check if the time_avg is empty to avoid seg fault
-	if(time_avg.empty())
-	{
-		time_avg.push_back(t_interval/100);
-	}
-	else
-	{
+	// if(time_avg.empty())
+	// {
+		// time_avg.push_back(t_interval/100);
+	// }
+	// else
+	// {
 	
 		auto last_avg = time_avg.end();
 		//progressive average to avoid imprecision rounding
-		t_interval = *last_avg + (t_interval - *last_avg)/100;
+		// t_interval = *last_avg + (t_interval - *last_avg)/100;
+		t_interval = t_interval - *last_avg/100;
 		time_avg.push_back(t_interval);
 	
-	} 
+	// }
 }
 
 void save_input_size(int d_interval){
@@ -114,7 +120,7 @@ void writeData(){
 
 	std::ofstream output;
 
-	output.open("../output/analyze_output.txt");
+	output.open("../output/analyze_output.plt");
 
 	output << std::left << std::setw(10) << "# N";
 	
@@ -147,8 +153,4 @@ void writeData(){
 	}
 
 	output.close();
-
-	std::cout << "time " << time_avg.size() << std::endl;
-	std::cout << "input " << input_size.size() << std::endl;
-	std::cout << "file size" << file_size << std::endl;
 }

@@ -5,8 +5,8 @@
 int main(int argc, char const *argv[])
 {
 
-	int data_size = 1000;
-	int sampling = 10;
+	int data_size = 10000000;
+	int sampling = 1000000;
 	sampling = calc_sampling(sampling, data_size);
 	std::vector<std::function<itr(int,itr,itr)> > searchs_v;
 	std::vector<std::string> labels;
@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 	
 		add_label(labels);
 		control_flux(searchs_v, -10, data_size, sampling);
-		print_time();
+		// print_time();
 		
 	}else if(argc > 1 && argc < 9){
 
