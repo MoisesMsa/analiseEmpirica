@@ -126,7 +126,7 @@ void writeData(){
 			++label;
 		}else{
 			if(j == 1 && size < input_size.end()){
-				output << std::left << std::setw(6) << *size;
+				output << std::left << std::setw(8) << *size;
 				++size;
 			}
 
