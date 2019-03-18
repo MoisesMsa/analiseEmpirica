@@ -15,7 +15,6 @@ void fill_data(int data_size){
 }
 
 void run_search(std::function <itr (int ,itr, itr)> search, int key, itr l, itr r){
-	
 	std::chrono::duration<double> avg_exec;
 
 	for (int i = 0; i < 100; ++i)
@@ -35,19 +34,28 @@ void control_flux(std::vector<std::function<itr(int,itr,itr)> > searchs_v, int k
 	fill_data(data_size);
 
 	auto first = dataset.begin(), last = first + sampling;
-	std::cout << "sam: " << sampling << '\n';
-	std::cout << "distance init: " << std::distance(first, last) << '\n';
+	int sam_num = 0;
+	// std::cout << "sam: " << sampling << '\n';
+	// std::cout << "distance init: " << std::distance(first, last) << '\n';
 
 	while(last <= dataset.end())
 	{
+		std::cout << "sampling num: " << sam_num << std::endl;
 		save_input_size(std::distance(first, last));
 		
+		auto label = searchs_labels.begin();
+		
+		// std::cout << "----------------------------------------------" << std::endl; 
 		for (auto search = searchs_v.begin(); search < searchs_v.end(); ++search)
 		{
+			// std::cout << "running: " << *label << std::endl;
 			run_search(*search, key, first, last);
+			++label;
 		}
+		// std::cout << "----------------------------------------------" << std::endl; 
 
 		last += sampling;
+		++sam_num;
 	}
 
 	writeData();
@@ -83,7 +91,6 @@ void save_input_size(int d_interval){
 
 void print_time(){
 	std::cout << "time vector size: " << time_avg.size() << std::endl;
-	std::cout << "data vector size: " << dataset.size() << std::endl;
 	for (auto i = time_avg.begin(); i < time_avg.end(); ++i) 
 		std::cout << *i << std::endl;
 }
@@ -99,12 +106,7 @@ void add_label(std::string label){
 
 void writeData(){
 
-	std::cout << "time " << time_avg.size() << std::endl;
-	std::cout << "labels " << searchs_labels.size() << std::endl;
-	std::cout << "input " << input_size.size() << std::endl;
-
 	int file_size = time_avg.size() + searchs_labels.size() + input_size.size(), j = 0;
-	std::cout << "file size" << file_size << std::endl;
 
 	auto time = time_avg.begin();
 	auto label = searchs_labels.begin();
@@ -114,31 +116,39 @@ void writeData(){
 
 	output.open("../output/analyze_output.txt");
 
-	output << "# N ";
-
-	// print_time();
-
-	std::cout << "time AVG: " << time_avg.size() << std::endl;
-
-	for(int i = 0; i <= file_size; i++){
-		std::cout << "i: " << i << std::endl;
+	output << std::left << std::setw(10) << "# N";
+	
+	for(int i = 0; i < file_size; i++){
+		
 		if(i < searchs_labels.size())
 		{
-			output << *label << "   ";
+			output << std::left << std::setw(13) <<*label;
 			++label;
-		}else if(j == searchs_labels.size()){
-			output << " \n";
-			j = 0;
-		}else if(j == 1){
-			output << *size << "    ";
-			++size;
 		}else{
-			output << *time << "    ";
-			++time;
+			if(j == 1 && size < input_size.end()){
+				output << std::left << std::setw(6) << *size;
+				++size;
+			}
+
+			if(time < time_avg.end()){
+				output << std::left << std::setw(13) << *time;
+				++time;
+			}
+
+		}
+
+		if(j == searchs_labels.size() || i == 6){
+			output << "\n";
+			j = 0;
 		}
 
 		++j;
+		
 	}
 
 	output.close();
+
+	std::cout << "time " << time_avg.size() << std::endl;
+	std::cout << "input " << input_size.size() << std::endl;
+	std::cout << "file size" << file_size << std::endl;
 }

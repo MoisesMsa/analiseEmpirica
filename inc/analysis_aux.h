@@ -1,6 +1,7 @@
 #include "searchs.h"
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 int generateFib(itr , itr);
 void control_flux(std::vector<std::function<itr(int,itr,itr)> >, int, int, int);

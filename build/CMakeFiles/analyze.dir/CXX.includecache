@@ -13,6 +13,8 @@ string
 -
 fstream
 -
+iomanip
+-
 
 /mnt/c/edb/analiseEmpirica/inc/searchs.h
 iostream
