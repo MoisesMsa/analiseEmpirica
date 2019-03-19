@@ -6,11 +6,30 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/brunabarbosa_/analiseEmpirica/src/main.cpp
+=======
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
+string
+-
+fstream
+-
+iomanip
+-
+
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
+>>>>>>> upstream/master
 iostream
+-
+vector
+-
+functional
 -
 chrono
 -
+<<<<<<< HEAD
 string
 -
 bits/stdc++.h
@@ -31,4 +50,22 @@ vector
 -
 math.h
 -
+=======
+
+/mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp
+../inc/analysis_aux.h
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+
+/mnt/c/edb/analiseEmpirica/src/main.cpp
+iostream
+-
+../inc/searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
+../inc/analysis_aux.h
+/mnt/c/edb/analiseEmpirica/inc/analysis_aux.h
+
+/mnt/c/edb/analiseEmpirica/src/searchs.cpp
+../inc/searchs.h
+/mnt/c/edb/analiseEmpirica/inc/searchs.h
+>>>>>>> upstream/master
 

@@ -1,8 +1,8 @@
-#include "search.h"
+#include "../inc/searchs.h"
 
 
 itr linear(int key, itr l, itr r)
-{
+{	
 	while(l != r){
 
 	#ifdef DEBUG
@@ -23,7 +23,7 @@ itr linear(int key, itr l, itr r)
 
 itr binary(int key, itr l, itr r)
 {
-	
+
 	int distance;
 	itr middle;
 
@@ -334,6 +334,7 @@ itr ternary_r(int key, itr l, itr r){
 	return r;
 }
 
+<<<<<<< HEAD:src/search.cpp
 void generateDataset(int numberDatasets, std::vector<std::vector<long int>> & datasets)
 {
 	int i = 0, long int maxGen = 2**28;
@@ -377,3 +378,5 @@ void generateDataset(int numberDatasets, std::vector<std::vector<long int>> & da
 // double average(){
 
 // }
+=======
+>>>>>>> upstream/master:src/searchs.cpp

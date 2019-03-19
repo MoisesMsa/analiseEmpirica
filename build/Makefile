@@ -123,6 +123,33 @@ analyze/fast:
 	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/build
 .PHONY : analyze/fast
 
+src/analysis_aux.o: src/analysis_aux.cpp.o
+
+.PHONY : src/analysis_aux.o
+
+# target to build an object file
+src/analysis_aux.cpp.o:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/analysis_aux.cpp.o
+.PHONY : src/analysis_aux.cpp.o
+
+src/analysis_aux.i: src/analysis_aux.cpp.i
+
+.PHONY : src/analysis_aux.i
+
+# target to preprocess a source file
+src/analysis_aux.cpp.i:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/analysis_aux.cpp.i
+.PHONY : src/analysis_aux.cpp.i
+
+src/analysis_aux.s: src/analysis_aux.cpp.s
+
+.PHONY : src/analysis_aux.s
+
+# target to generate assembly for a file
+src/analysis_aux.cpp.s:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/analysis_aux.cpp.s
+.PHONY : src/analysis_aux.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,32 +177,32 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/search.o: src/search.cpp.o
+src/searchs.o: src/searchs.cpp.o
 
-.PHONY : src/search.o
+.PHONY : src/searchs.o
 
 # target to build an object file
-src/search.cpp.o:
-	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/search.cpp.o
-.PHONY : src/search.cpp.o
+src/searchs.cpp.o:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/searchs.cpp.o
+.PHONY : src/searchs.cpp.o
 
-src/search.i: src/search.cpp.i
+src/searchs.i: src/searchs.cpp.i
 
-.PHONY : src/search.i
+.PHONY : src/searchs.i
 
 # target to preprocess a source file
-src/search.cpp.i:
-	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/search.cpp.i
-.PHONY : src/search.cpp.i
+src/searchs.cpp.i:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/searchs.cpp.i
+.PHONY : src/searchs.cpp.i
 
-src/search.s: src/search.cpp.s
+src/searchs.s: src/searchs.cpp.s
 
-.PHONY : src/search.s
+.PHONY : src/searchs.s
 
 # target to generate assembly for a file
-src/search.cpp.s:
-	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/search.cpp.s
-.PHONY : src/search.cpp.s
+src/searchs.cpp.s:
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/searchs.cpp.s
+.PHONY : src/searchs.cpp.s
 
 # Help Target
 help:
@@ -186,12 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... analyze"
 	@echo "... edit_cache"
+	@echo "... src/analysis_aux.o"
+	@echo "... src/analysis_aux.i"
+	@echo "... src/analysis_aux.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/search.o"
-	@echo "... src/search.i"
-	@echo "... src/search.s"
+	@echo "... src/searchs.o"
+	@echo "... src/searchs.i"
+	@echo "... src/searchs.s"
 .PHONY : help
 
 

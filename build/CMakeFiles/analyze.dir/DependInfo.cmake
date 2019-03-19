@@ -4,8 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+<<<<<<< HEAD
   "/home/brunabarbosa_/analiseEmpirica/src/main.cpp" "/home/brunabarbosa_/analiseEmpirica/build/CMakeFiles/analyze.dir/src/main.cpp.o"
   "/home/brunabarbosa_/analiseEmpirica/src/search.cpp" "/home/brunabarbosa_/analiseEmpirica/build/CMakeFiles/analyze.dir/src/search.cpp.o"
+=======
+  "/mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp" "/mnt/c/edb/analiseEmpirica/build/CMakeFiles/analyze.dir/src/analysis_aux.cpp.o"
+  "/mnt/c/edb/analiseEmpirica/src/main.cpp" "/mnt/c/edb/analiseEmpirica/build/CMakeFiles/analyze.dir/src/main.cpp.o"
+  "/mnt/c/edb/analiseEmpirica/src/searchs.cpp" "/mnt/c/edb/analiseEmpirica/build/CMakeFiles/analyze.dir/src/searchs.cpp.o"
+>>>>>>> upstream/master
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

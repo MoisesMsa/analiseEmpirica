@@ -57,10 +57,39 @@ include CMakeFiles/analyze.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/analyze.dir/flags.make
 
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.o: CMakeFiles/analyze.dir/flags.make
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.o: ../src/analysis_aux.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/analyze.dir/src/analysis_aux.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/analyze.dir/src/analysis_aux.cpp.o -c /mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp
+
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/analyze.dir/src/analysis_aux.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp > CMakeFiles/analyze.dir/src/analysis_aux.cpp.i
+
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/analyze.dir/src/analysis_aux.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/edb/analiseEmpirica/src/analysis_aux.cpp -o CMakeFiles/analyze.dir/src/analysis_aux.cpp.s
+
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.requires:
+
+.PHONY : CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.requires
+
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.provides: CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.requires
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.provides.build
+.PHONY : CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.provides
+
+CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.provides.build: CMakeFiles/analyze.dir/src/analysis_aux.cpp.o
+
+
 CMakeFiles/analyze.dir/src/main.cpp.o: CMakeFiles/analyze.dir/flags.make
 CMakeFiles/analyze.dir/src/main.cpp.o: ../src/main.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brunabarbosa_/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/analyze.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/analyze.dir/src/main.cpp.o -c /home/brunabarbosa_/analiseEmpirica/src/main.cpp
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/analyze.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/analyze.dir/src/main.cpp.o -c /mnt/c/edb/analiseEmpirica/src/main.cpp
+>>>>>>> upstream/master
 
 CMakeFiles/analyze.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/analyze.dir/src/main.cpp.i"
@@ -70,6 +99,7 @@ CMakeFiles/analyze.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/analyze.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brunabarbosa_/analiseEmpirica/src/main.cpp -o CMakeFiles/analyze.dir/src/main.cpp.s
 
+<<<<<<< HEAD
 CMakeFiles/analyze.dir/src/search.cpp.o: CMakeFiles/analyze.dir/flags.make
 CMakeFiles/analyze.dir/src/search.cpp.o: ../src/search.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/brunabarbosa_/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/analyze.dir/src/search.cpp.o"
@@ -82,20 +112,51 @@ CMakeFiles/analyze.dir/src/search.cpp.i: cmake_force
 CMakeFiles/analyze.dir/src/search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/analyze.dir/src/search.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/brunabarbosa_/analiseEmpirica/src/search.cpp -o CMakeFiles/analyze.dir/src/search.cpp.s
+=======
+CMakeFiles/analyze.dir/src/searchs.cpp.o: CMakeFiles/analyze.dir/flags.make
+CMakeFiles/analyze.dir/src/searchs.cpp.o: ../src/searchs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/analyze.dir/src/searchs.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/analyze.dir/src/searchs.cpp.o -c /mnt/c/edb/analiseEmpirica/src/searchs.cpp
+
+CMakeFiles/analyze.dir/src/searchs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/analyze.dir/src/searchs.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/edb/analiseEmpirica/src/searchs.cpp > CMakeFiles/analyze.dir/src/searchs.cpp.i
+
+CMakeFiles/analyze.dir/src/searchs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/analyze.dir/src/searchs.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/edb/analiseEmpirica/src/searchs.cpp -o CMakeFiles/analyze.dir/src/searchs.cpp.s
+
+CMakeFiles/analyze.dir/src/searchs.cpp.o.requires:
+
+.PHONY : CMakeFiles/analyze.dir/src/searchs.cpp.o.requires
+
+CMakeFiles/analyze.dir/src/searchs.cpp.o.provides: CMakeFiles/analyze.dir/src/searchs.cpp.o.requires
+	$(MAKE) -f CMakeFiles/analyze.dir/build.make CMakeFiles/analyze.dir/src/searchs.cpp.o.provides.build
+.PHONY : CMakeFiles/analyze.dir/src/searchs.cpp.o.provides
+
+CMakeFiles/analyze.dir/src/searchs.cpp.o.provides.build: CMakeFiles/analyze.dir/src/searchs.cpp.o
+
+>>>>>>> upstream/master
 
 # Object files for target analyze
 analyze_OBJECTS = \
+"CMakeFiles/analyze.dir/src/analysis_aux.cpp.o" \
 "CMakeFiles/analyze.dir/src/main.cpp.o" \
-"CMakeFiles/analyze.dir/src/search.cpp.o"
+"CMakeFiles/analyze.dir/src/searchs.cpp.o"
 
 # External object files for target analyze
 analyze_EXTERNAL_OBJECTS =
 
+analyze: CMakeFiles/analyze.dir/src/analysis_aux.cpp.o
 analyze: CMakeFiles/analyze.dir/src/main.cpp.o
-analyze: CMakeFiles/analyze.dir/src/search.cpp.o
+analyze: CMakeFiles/analyze.dir/src/searchs.cpp.o
 analyze: CMakeFiles/analyze.dir/build.make
 analyze: CMakeFiles/analyze.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/brunabarbosa_/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable analyze"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/edb/analiseEmpirica/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable analyze"
+>>>>>>> upstream/master
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/analyze.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -103,6 +164,15 @@ CMakeFiles/analyze.dir/build: analyze
 
 .PHONY : CMakeFiles/analyze.dir/build
 
+<<<<<<< HEAD
+=======
+CMakeFiles/analyze.dir/requires: CMakeFiles/analyze.dir/src/analysis_aux.cpp.o.requires
+CMakeFiles/analyze.dir/requires: CMakeFiles/analyze.dir/src/main.cpp.o.requires
+CMakeFiles/analyze.dir/requires: CMakeFiles/analyze.dir/src/searchs.cpp.o.requires
+
+.PHONY : CMakeFiles/analyze.dir/requires
+
+>>>>>>> upstream/master
 CMakeFiles/analyze.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/analyze.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/analyze.dir/clean

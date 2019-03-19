@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 /usr/bin/c++   -Wall -D DEBUG   CMakeFiles/analyze.dir/src/main.cpp.o CMakeFiles/analyze.dir/src/search.cpp.o  -o analyze 
+=======
+/usr/bin/c++   -Wall    CMakeFiles/analyze.dir/src/analysis_aux.cpp.o CMakeFiles/analyze.dir/src/main.cpp.o CMakeFiles/analyze.dir/src/searchs.cpp.o  -o analyze 
+>>>>>>> upstream/master

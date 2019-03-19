@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <chrono>
 #include <string>
 #include<bits/stdc++.h> 
@@ -25,102 +26,80 @@ int main(int argc, char const *argv[])
     generateDataset(datasetQuantity, datasets);
 
    	/*
+=======
+#include "../inc/searchs.h"
+#include "../inc/analysis_aux.h"
 
+int main(int argc, char const *argv[])
+{
 
-	#ifdef LIN
-	linear(5, data.begin(), data.end());
-	#endif
+	int data_size = 10000000;
+	int sampling = 1000000;
+	sampling = calc_sampling(sampling, data_size);
+	std::vector<std::function<itr(int,itr,itr)> > searchs_v;
+	std::vector<std::string> labels;
+>>>>>>> upstream/master
+
+	if(argc == 1){
+
+		searchs_v = {linear, binary, fibonacci, ternary, jump, binary_r, ternary_r};
+		labels = {"lin", "bin", "fib", "ter", "jump", "bin_r", "ter_r"};
 	
-	#ifdef BIN
-	binary(-20, data.begin(), data.end());
-	binary(5, data.begin(), data.end());
-	binary(21, data.begin(), data.end());
-	#endif
+		add_label(labels);
+		control_flux(searchs_v, -10, data_size, sampling);
+		// print_time();
+		
+	}else if(argc > 1 && argc < 9){
 
-	#ifdef FIB
-	fibonacci(5, data.begin(), data.end());
-	fibonacci(31, data.begin(), data.end()-1);
-	#endif
+		sampling = std::stoi(argv[1]);
+		sampling = calc_sampling(sampling, data_size);
+	
+		for (int i = 0; i < argc; ++i){
 
-	#ifdef TER
-	ternary(20, data.begin(), data.end());
-	ternary(21, data.begin(), data.end());
-	ternary(22, data.begin(), data.end());
-	ternary(23, data.begin(), data.end());
-	ternary(24, data.begin(), data.end());
-	ternary(25, data.begin(), data.end());
-	ternary(26, data.begin(), data.end());
-	ternary(27, data.begin(), data.end());
-	ternary(28, data.begin(), data.end());
-	ternary(29, data.begin(), data.end());
-	ternary(30, data.begin(), data.end());
-	ternary(31, data.begin(), data.end());
-	ternary(32, data.begin(), data.end());
-	ternary(33, data.begin(), data.end());
-	ternary(34, data.begin(), data.end());
-	ternary(35, data.begin(), data.end());
-	ternary(36, data.begin(), data.end());
-	ternary(37, data.begin(), data.end());
-	#endif
+			if(std::string(argv[i]) == "lin"){
+			
+				searchs_v.push_back(linear);
+				add_label("lin");
+			
+			}else if(std::string(argv[i]) == "bin"){
 
-	#ifdef JUM
-	jump(70, data.begin(), data.end());
-	#endif
+				searchs_v.push_back(binary);
+				add_label("bin");
+			
+			}else if(std::string(argv[i]) == "fib"){
+			
+				searchs_v.push_back(fibonacci);
+				add_label("fib");
+			
+			}else if(std::string(argv[i]) == "ter"){
+			
+				searchs_v.push_back(ternary);
+				add_label("ter");
+			
+			}else if(std::string(argv[i]) == "jum"){
+			
+				searchs_v.push_back(jump);
+				add_label("jum");
+			
+			}else if(std::string(argv[i]) == "bin_r"){
+			
+				searchs_v.push_back(binary_r);
+				add_label("bin_r");
+			
+			}else if(std::string(argv[i]) == "ter_r"){
+			
+				searchs_v.push_back(ternary_r);
+				add_label("ter_r");
+			
+			}
+		}
+		
+		control_flux(searchs_v, -10, data_size, sampling);
 
-
-	#ifdef BIN_R
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(24, data.begin(), data.end());
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(34, data.begin(), data.end());
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(31, data.begin(), data.end());
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(70, data.begin(), data.end());
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(20, data.begin(), data.end());
-	std::cout << "------------------------------------------------------" << std::endl;
-	binary_r(-20, data.begin(), data.end());
-	#endif
-
-	#ifdef TER_R
-	ternary_r(-1, data.begin(), data.end());
-	// ternary_r(-20, data.begin(), data.end());
-	ternary_r(20, data.begin(), data.end());
-	ternary_r(21, data.begin(), data.end());
-	ternary_r(22, data.begin(), data.end());
-	ternary_r(23, data.begin(), data.end());
-	ternary_r(24, data.begin(), data.end());
-	ternary_r(25, data.begin(), data.end());
-	ternary_r(26, data.begin(), data.end());
-	ternary_r(27, data.begin(), data.end());
-	ternary_r(28, data.begin(), data.end());
-	ternary_r(29, data.begin(), data.end());
-	ternary_r(30, data.begin(), data.end());
-	ternary_r(31, data.begin(), data.end());
-	ternary_r(32, data.begin(), data.end());
-	ternary_r(33, data.begin(), data.end());
-	ternary_r(34, data.begin(), data.end());
-	ternary_r(35, data.begin(), data.end());
-	ternary_r(36, data.begin(), data.end());
-	ternary_r(37, data.begin(), data.end());
-	ternary_r(-1, data.begin(), data.end());
-	ternary_r(24, data.begin(), data.end());
-	ternary_r(30, data.begin(), data.end());
-	#endif
-
-	// for (int i = 0; i < testsTotal; ++i)
-	// {
-	// 	auto init = std::chrono::system_clock::now;
-	// 	//busca()
-	// 	#if -l
-	// 	linear();
-	// 	#endif
-	// 	//aumentar intervalo no vector
-	// 	auto end = std::chrono::system_clock::now;
-
-	// 	// saveTime(end - init);
-	// }
+	}else if(argc > 9){
+		std::cout << "type a valid entry!" << std::endl;
+		return -1;
+	}
 
 	*/
 
