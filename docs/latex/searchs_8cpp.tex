@@ -1,0 +1,160 @@
+\hypertarget{searchs_8cpp}{}\section{src/searchs.cpp File Reference}
+\label{searchs_8cpp}\index{src/searchs.\+cpp@{src/searchs.\+cpp}}
+
+
+searchs implementations.  
+
+
+{\ttfamily \#include \char`\"{}../inc/searchs.\+h\char`\"{}}\newline
+Include dependency graph for searchs.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+itr \hyperlink{searchs_8cpp_a7a0651812fbeceff8349949dacb9027d}{linear} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a iterative linear search on a given dataset. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_a86a7c8550ce2d5eb19c7f3c90eb3d10c}{binary} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a iterative binary search on a given dataset. \end{DoxyCompactList}\item 
+int \hyperlink{searchs_8cpp_a31ffc88c8acacb91c294535ab5e46a0d}{generate\+Fib} (itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The function recives the left and right positions to calc the distance and returns the neartest fibonacci\textquotesingle{}s number. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_a389a170c0c7e32f59a93c12ff974d337}{fibonacci} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a fibonacci search on a given dataset. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_af865dd175b5402d449050ecb9d1f6905}{ternary} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a iterative ternary search on a given dataset. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_ac89f5fec851deb6daa13ff108d28da56}{jump} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a jump search on a given dataset. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_a3c9a18dd5fb4ccc65e8d8e7a84cf764e}{binary\+\_\+r} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a recursive binary search on a given dataset. \end{DoxyCompactList}\item 
+itr \hyperlink{searchs_8cpp_ae06f3269077f3c23289d1102d8156b4e}{ternary\+\_\+r} (int key, itr l, itr r)
+\begin{DoxyCompactList}\small\item\em The functions peforms a ternay binary search on a given dataset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+searchs implementations. 
+
+\begin{DoxyAuthor}{Author}
+Moisés Sousa Araújo e Bruna Hellen de Castro Dantas Barbosa 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{searchs_8cpp_a86a7c8550ce2d5eb19c7f3c90eb3d10c}\label{searchs_8cpp_a86a7c8550ce2d5eb19c7f3c90eb3d10c}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!binary@{binary}}
+\index{binary@{binary}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{binary()}{binary()}}
+{\footnotesize\ttfamily itr binary (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{itr}]{,  }\item[{itr}]{ }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a iterative binary search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_a3c9a18dd5fb4ccc65e8d8e7a84cf764e}\label{searchs_8cpp_a3c9a18dd5fb4ccc65e8d8e7a84cf764e}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!binary\+\_\+r@{binary\+\_\+r}}
+\index{binary\+\_\+r@{binary\+\_\+r}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{binary\+\_\+r()}{binary\_r()}}
+{\footnotesize\ttfamily itr binary\+\_\+r (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{itr}]{l,  }\item[{itr}]{r }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a recursive binary search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_a389a170c0c7e32f59a93c12ff974d337}\label{searchs_8cpp_a389a170c0c7e32f59a93c12ff974d337}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!fibonacci@{fibonacci}}
+\index{fibonacci@{fibonacci}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{fibonacci()}{fibonacci()}}
+{\footnotesize\ttfamily itr fibonacci (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{itr}]{,  }\item[{itr}]{ }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a fibonacci search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_a31ffc88c8acacb91c294535ab5e46a0d}\label{searchs_8cpp_a31ffc88c8acacb91c294535ab5e46a0d}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!generate\+Fib@{generate\+Fib}}
+\index{generate\+Fib@{generate\+Fib}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{generate\+Fib()}{generateFib()}}
+{\footnotesize\ttfamily int generate\+Fib (\begin{DoxyParamCaption}\item[{itr}]{,  }\item[{itr}]{ }\end{DoxyParamCaption})}
+
+
+
+The function recives the left and right positions to calc the distance and returns the neartest fibonacci\textquotesingle{}s number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_ac89f5fec851deb6daa13ff108d28da56}\label{searchs_8cpp_ac89f5fec851deb6daa13ff108d28da56}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!jump@{jump}}
+\index{jump@{jump}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily itr jump (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{itr}]{l,  }\item[{itr}]{r }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a jump search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_a7a0651812fbeceff8349949dacb9027d}\label{searchs_8cpp_a7a0651812fbeceff8349949dacb9027d}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!linear@{linear}}
+\index{linear@{linear}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{linear()}{linear()}}
+{\footnotesize\ttfamily itr linear (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{itr}]{l,  }\item[{itr}]{r }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a iterative linear search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_af865dd175b5402d449050ecb9d1f6905}\label{searchs_8cpp_af865dd175b5402d449050ecb9d1f6905}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!ternary@{ternary}}
+\index{ternary@{ternary}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{ternary()}{ternary()}}
+{\footnotesize\ttfamily itr ternary (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{itr}]{l,  }\item[{itr}]{r }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a iterative ternary search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{searchs_8cpp_ae06f3269077f3c23289d1102d8156b4e}\label{searchs_8cpp_ae06f3269077f3c23289d1102d8156b4e}} 
+\index{searchs.\+cpp@{searchs.\+cpp}!ternary\+\_\+r@{ternary\+\_\+r}}
+\index{ternary\+\_\+r@{ternary\+\_\+r}!searchs.\+cpp@{searchs.\+cpp}}
+\subsubsection{\texorpdfstring{ternary\+\_\+r()}{ternary\_r()}}
+{\footnotesize\ttfamily itr ternary\+\_\+r (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{itr}]{l,  }\item[{itr}]{r }\end{DoxyParamCaption})}
+
+
+
+The functions peforms a ternay binary search on a given dataset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}

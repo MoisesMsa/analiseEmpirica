@@ -1,59 +1,44 @@
+/**
+ * @file main.cpp
+ * @author     Moisés Sousa Araújo e Bruna Hellen de Castro Dantas Barbosa
+ * @brief      The main execution file.
+ */
+
 #include <iostream>
-<<<<<<< HEAD
-#include <chrono>
-#include <string>
-#include<bits/stdc++.h> 
-#include "search.h"
-#include <function.h>
-
-using itr = std::vector<long int>::iterator;
-
-#define maxDataset 50;
-
-
-
-int main(int argc, char const *argv[])
-{
-	//Vector where the group of datasets are stored
-    std::vector<std::std::vector<long int>> datasets;
-    std::vector<std::function<itr(int, itr, itr)>> func_v = {linear, binary, fibonacci, ternary, jump, binary_r, te
-    };
-    int datasetQuantity = maxDataset;
-
-    if(argc > 1){  datasetQuantity = std::stoi(argv[1]);  };
-
-    
-    generateDataset(datasetQuantity, datasets);
-
-   	/*
-=======
 #include "../inc/searchs.h"
-#include "../inc/analysis_aux.h"
+#include "../inc/util.h"
 
 int main(int argc, char const *argv[])
 {
 
+	//1x10^7
 	int data_size = 10000000;
-	int sampling = 1000000;
-	sampling = calc_sampling(sampling, data_size);
+	int sample_total = 0, sample_interval = 0;
+
 	std::vector<std::function<itr(int,itr,itr)> > searchs_v;
 	std::vector<std::string> labels;
->>>>>>> upstream/master
 
-	if(argc == 1){
-
+	if(argc == 1)
+	{
+		//1x10^5
+		sample_total = 100000;
+		sample_interval = grow_tax(sample_total, data_size);
+		
+		data_fill(data_size);
+		
 		searchs_v = {linear, binary, fibonacci, ternary, jump, binary_r, ternary_r};
-		labels = {"lin", "bin", "fib", "ter", "jump", "bin_r", "ter_r"};
+		labels = {"lin", "bin", "fib", "ter", "jum", "bin_r", "ter_r"};
 	
 		add_label(labels);
-		control_flux(searchs_v, -10, data_size, sampling);
-		// print_time();
+		run_search(searchs_v, -10, sample_total, sample_interval);
 		
-	}else if(argc > 1 && argc < 9){
+	}
+	else if(argc > 1 && argc < 9)
+	{
 
-		sampling = std::stoi(argv[1]);
-		sampling = calc_sampling(sampling, data_size);
-	
+		sample_total = std::stoi(argv[1]);
+		sample_interval = grow_tax(sample_total, data_size);
+
 		for (int i = 0; i < argc; ++i){
 
 			if(std::string(argv[i]) == "lin"){
@@ -93,15 +78,21 @@ int main(int argc, char const *argv[])
 			
 			}
 		}
-		
-		control_flux(searchs_v, -10, data_size, sampling);
 
-	}else if(argc > 9){
+		if(searchs_v.empty() == true){
+			std::cout << "type a valid search!" << std::endl;
+		}else{
+			data_fill(data_size);
+			run_search(searchs_v, -10, sample_total, sample_interval);
+		}
+		
+
+	}
+	else if(argc > 9)
+	{
 		std::cout << "type a valid entry!" << std::endl;
 		return -1;
 	}
-
-	*/
 
 	return 0;
 }

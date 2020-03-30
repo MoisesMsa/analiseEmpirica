@@ -1,8 +1,15 @@
+/**
+ * @file searchs.cpp
+ * @author     Moisés Sousa Araújo e Bruna Hellen de Castro Dantas Barbosa
+ * @brief      searchs implementations.
+ */
+
 #include "../inc/searchs.h"
 
 
 itr linear(int key, itr l, itr r)
 {	
+
 	while(l != r){
 
 	#ifdef DEBUG
@@ -135,6 +142,7 @@ itr fibonacci(int key, itr l, itr r)
 
 itr ternary(int key, itr l, itr r)
 {
+	
 	auto partition = std::distance(l, r)/3;
 	
 	auto t1 = l + partition;
@@ -192,6 +200,7 @@ itr ternary(int key, itr l, itr r)
 
 itr jump(int key, itr l, itr r)
 {
+
 	#ifdef DEBUG
 		std::cout << "jump val: " << key << std::endl;
 	#endif
@@ -281,9 +290,9 @@ itr binary_r(int key, itr l, itr r)
 
 itr ternary_r(int key, itr l, itr r){
 
-	// #ifdef DEBUG
-	// std::cout << "init ternary val: " << key << std::endl;
-	// #endif
+	#ifdef DEBUG
+	std::cout << "init ternary val: " << key << std::endl;
+	#endif
 
 	auto partition = std::distance(l, r)/3;
 	
@@ -334,49 +343,3 @@ itr ternary_r(int key, itr l, itr r){
 	return r;
 }
 
-<<<<<<< HEAD:src/search.cpp
-void generateDataset(int numberDatasets, std::vector<std::vector<long int>> & datasets)
-{
-	int i = 0, long int maxGen = 2**28;
-	int initialSize = 1000;
-	int nJump = (maxGen - 1000)/numberDatasets;
-
-	datasets.resize(numberDatasets);
-
-	for (int i = 0; i < numberDatasets; ++i)
-	{  
-		datasets[i].resize(initialSize);
-		
-		for (int j = 0; j < ; ++j)
-		{
-			datasets[i].push_back(j);
-
-		}
-		initialSize += nJump;
-	}
-}
-
-
-
-
-// void saveTime(int interval, std::vector){
-// 	time.push_back(interval);
-// }
-
-// void write_data(std::vector<double> &time){
-// 	ofstream grap("analyze graph");
-// 	//titulo da pesquisa
-// 	//numero de casos de teste
-// 	//coluna com os daods correspondentes ao total das pesquisas especificadas pelo usuário
-
-// 	for (int i = 0; i < count; ++i)
-// 	 {
-
-// 	 } 
-// }
-
-// double average(){
-
-// }
-=======
->>>>>>> upstream/master:src/searchs.cpp

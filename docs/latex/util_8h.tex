@@ -1,0 +1,188 @@
+\hypertarget{util_8h}{}\section{inc/util.h File Reference}
+\label{util_8h}\index{inc/util.\+h@{inc/util.\+h}}
+
+
+File with the execution helpers, debug.  
+
+
+{\ttfamily \#include \char`\"{}searchs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+Include dependency graph for util.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{util_8h_a441f0696f70d205477ee1e595208d50b}{generate\+Fib} (itr, itr)
+\begin{DoxyCompactList}\small\item\em The function recives the left and right positions to calc the distance and returns the neartest fibonacci\textquotesingle{}s number. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_ab1fe99aed54f5a28d73d38a18e0f8a2a}{data\+\_\+fill} (int)
+\begin{DoxyCompactList}\small\item\em The function recives a int that indicates the maximum value. supported by the machine and allocate the std\+::vector$<$long int$>$ dataset;. \end{DoxyCompactList}\item 
+int \hyperlink{util_8h_aff858e093e0f94855ddd52406e136381}{grow\+\_\+tax} (int, int)
+\begin{DoxyCompactList}\small\item\em The function returns the dataset grow rate using the calculus\+: (\mbox{[}maximum datasize\mbox{]} -\/ 1000)/\mbox{[}sample total\mbox{]}. \end{DoxyCompactList}\item 
+double \hyperlink{util_8h_af70bb85bc187551d5657897cb0017b40}{calc\+\_\+avg} (double, double, int)
+\begin{DoxyCompactList}\small\item\em The function makes a progressive average of 100 searchs iterations and avoid rouding problems with double the callc is\+: \mbox{[}average\mbox{]} = \mbox{[}previous average\mbox{]} + (\mbox{[}previous average\mbox{]} -\/ \mbox{[}current time\mbox{]})/\mbox{[}nth iteration\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_aa5077f18968170bbfe3a78ffc19e24fa}{save\+\_\+avg} (double)
+\begin{DoxyCompactList}\small\item\em Recive the average of one hundred search exectuions and stores it in std\+::vector$<$double$>$ time\+\_\+avg. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_abfd780ba245a53c08e068c1311183d07}{save\+\_\+input\+\_\+size} (int)
+\begin{DoxyCompactList}\small\item\em Save the sample size in std\+::vector$<$int$>$ input\+\_\+size. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_ace624c52719c8102bc2188d90e7eea39}{add\+\_\+label} (std\+::vector$<$ std\+::string $>$)
+\begin{DoxyCompactList}\small\item\em Copy the default labels vector in std\+::vector$<$std\+::string$>$ searchs\+\_\+labels. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_aae60c4d85d50fd821eea1541b8793e37}{add\+\_\+label} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Ovewrites \hyperlink{util_8h_ace624c52719c8102bc2188d90e7eea39}{add\+\_\+label(std\+::vector$<$std\+::string$>$)} to stores indiviual labels of the searchs selected by the user in std\+::vector$<$std\+::string$>$ searchs\+\_\+labels. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_af810d0d816aaf4eb08ecfa8140051bdd}{run\+\_\+search} (std\+::vector$<$ std\+::function$<$ itr(int, itr, itr)$>$ $>$, int, int, int)
+\begin{DoxyCompactList}\small\item\em This function is the program\textquotesingle{}s core, here the searchs are called by a function pointer, the persintence funtions works here too, the execution time is measured and when all samples are ready the output file is created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{util_8h_ace9ff262e1947e3791efa6f27cdc4418}\label{util_8h_ace9ff262e1947e3791efa6f27cdc4418}} 
+void \hyperlink{util_8h_ace9ff262e1947e3791efa6f27cdc4418}{write\+Data} ()
+\begin{DoxyCompactList}\small\item\em This function get all stored values and writes a file in \textquotesingle{}/output\textquotesingle{} dir. If there is just one search function the file name is the function label, else is \textquotesingle{}analyze\+\_\+output.\+plt\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{util_8h_a388f572c62279f839ee138a9afbdeeb5}\label{util_8h_a388f572c62279f839ee138a9afbdeeb5}} 
+void \hyperlink{util_8h_a388f572c62279f839ee138a9afbdeeb5}{print} ()
+\begin{DoxyCompactList}\small\item\em Function to debug the data vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File with the execution helpers, debug. 
+
+\begin{DoxyAuthor}{Author}
+Moisés Sousa Araújo e Bruna Hellen de Castro Dantas Barbosa 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{util_8h_ace624c52719c8102bc2188d90e7eea39}\label{util_8h_ace624c52719c8102bc2188d90e7eea39}} 
+\index{util.\+h@{util.\+h}!add\+\_\+label@{add\+\_\+label}}
+\index{add\+\_\+label@{add\+\_\+label}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{add\+\_\+label()}{add\_label()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void add\+\_\+label (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{ }\end{DoxyParamCaption})}
+
+
+
+Copy the default labels vector in std\+::vector$<$std\+::string$>$ searchs\+\_\+labels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_aae60c4d85d50fd821eea1541b8793e37}\label{util_8h_aae60c4d85d50fd821eea1541b8793e37}} 
+\index{util.\+h@{util.\+h}!add\+\_\+label@{add\+\_\+label}}
+\index{add\+\_\+label@{add\+\_\+label}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{add\+\_\+label()}{add\_label()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void add\+\_\+label (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+
+
+Ovewrites \hyperlink{util_8h_ace624c52719c8102bc2188d90e7eea39}{add\+\_\+label(std\+::vector$<$std\+::string$>$)} to stores indiviual labels of the searchs selected by the user in std\+::vector$<$std\+::string$>$ searchs\+\_\+labels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_af70bb85bc187551d5657897cb0017b40}\label{util_8h_af70bb85bc187551d5657897cb0017b40}} 
+\index{util.\+h@{util.\+h}!calc\+\_\+avg@{calc\+\_\+avg}}
+\index{calc\+\_\+avg@{calc\+\_\+avg}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{calc\+\_\+avg()}{calc\_avg()}}
+{\footnotesize\ttfamily double calc\+\_\+avg (\begin{DoxyParamCaption}\item[{double}]{,  }\item[{double}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+The function makes a progressive average of 100 searchs iterations and avoid rouding problems with double the callc is\+: \mbox{[}average\mbox{]} = \mbox{[}previous average\mbox{]} + (\mbox{[}previous average\mbox{]} -\/ \mbox{[}current time\mbox{]})/\mbox{[}nth iteration\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_ab1fe99aed54f5a28d73d38a18e0f8a2a}\label{util_8h_ab1fe99aed54f5a28d73d38a18e0f8a2a}} 
+\index{util.\+h@{util.\+h}!data\+\_\+fill@{data\+\_\+fill}}
+\index{data\+\_\+fill@{data\+\_\+fill}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{data\+\_\+fill()}{data\_fill()}}
+{\footnotesize\ttfamily void data\+\_\+fill (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+The function recives a int that indicates the maximum value. supported by the machine and allocate the std\+::vector$<$long int$>$ dataset;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_a441f0696f70d205477ee1e595208d50b}\label{util_8h_a441f0696f70d205477ee1e595208d50b}} 
+\index{util.\+h@{util.\+h}!generate\+Fib@{generate\+Fib}}
+\index{generate\+Fib@{generate\+Fib}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{generate\+Fib()}{generateFib()}}
+{\footnotesize\ttfamily int generate\+Fib (\begin{DoxyParamCaption}\item[{itr}]{,  }\item[{itr}]{ }\end{DoxyParamCaption})}
+
+
+
+The function recives the left and right positions to calc the distance and returns the neartest fibonacci\textquotesingle{}s number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_aff858e093e0f94855ddd52406e136381}\label{util_8h_aff858e093e0f94855ddd52406e136381}} 
+\index{util.\+h@{util.\+h}!grow\+\_\+tax@{grow\+\_\+tax}}
+\index{grow\+\_\+tax@{grow\+\_\+tax}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{grow\+\_\+tax()}{grow\_tax()}}
+{\footnotesize\ttfamily int grow\+\_\+tax (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+The function returns the dataset grow rate using the calculus\+: (\mbox{[}maximum datasize\mbox{]} -\/ 1000)/\mbox{[}sample total\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_af810d0d816aaf4eb08ecfa8140051bdd}\label{util_8h_af810d0d816aaf4eb08ecfa8140051bdd}} 
+\index{util.\+h@{util.\+h}!run\+\_\+search@{run\+\_\+search}}
+\index{run\+\_\+search@{run\+\_\+search}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{run\+\_\+search()}{run\_search()}}
+{\footnotesize\ttfamily void run\+\_\+search (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::function$<$ itr(int, itr, itr)$>$ $>$}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is the program\textquotesingle{}s core, here the searchs are called by a function pointer, the persintence funtions works here too, the execution time is measured and when all samples are ready the output file is created. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_aa5077f18968170bbfe3a78ffc19e24fa}\label{util_8h_aa5077f18968170bbfe3a78ffc19e24fa}} 
+\index{util.\+h@{util.\+h}!save\+\_\+avg@{save\+\_\+avg}}
+\index{save\+\_\+avg@{save\+\_\+avg}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{save\+\_\+avg()}{save\_avg()}}
+{\footnotesize\ttfamily void save\+\_\+avg (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})}
+
+
+
+Recive the average of one hundred search exectuions and stores it in std\+::vector$<$double$>$ time\+\_\+avg. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{util_8h_abfd780ba245a53c08e068c1311183d07}\label{util_8h_abfd780ba245a53c08e068c1311183d07}} 
+\index{util.\+h@{util.\+h}!save\+\_\+input\+\_\+size@{save\+\_\+input\+\_\+size}}
+\index{save\+\_\+input\+\_\+size@{save\+\_\+input\+\_\+size}!util.\+h@{util.\+h}}
+\subsubsection{\texorpdfstring{save\+\_\+input\+\_\+size()}{save\_input\_size()}}
+{\footnotesize\ttfamily void save\+\_\+input\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Save the sample size in std\+::vector$<$int$>$ input\+\_\+size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
